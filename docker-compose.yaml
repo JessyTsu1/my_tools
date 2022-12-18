@@ -7,7 +7,7 @@ services:
       replicas: 8
     environment:
       - CLOUD_CONFIG=external
-      - has_GFW=false
+      - GFW=false
     restart: unless-stopped
     command:
       [
