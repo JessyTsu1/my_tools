@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  youtube-video-download-worker-0:
+    image: "panda1024/pku-ece-cv:v2.1"
+    deploy:
+      replicas: 12
+    environment:
+      - CLOUD_CONFIG=external
+      - GFW=false
+    restart: unless-stopped
+    command:
+      [
+          "bash",
+          "-c",
+          "conda run --no-capture-output --name pku-ece-cv rq worker pku_single_video_spider4 --url redis://:cGt1X3JlZGlz@42.193.252.170:6379 --path ./ --name COCO-3_worker-$$RANDOM"
+      ]
