@@ -4,7 +4,7 @@ services:
   youtube-video-download-worker-0:
     image: "panda1024/pku-ece-cv:v2.2"
     deploy:
-      replicas: 12
+      replicas: 16
     environment:
       - CLOUD_CONFIG=external
       - GFW=false
